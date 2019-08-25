@@ -16,18 +16,90 @@ http://maven.apache.org/download.cgi
 6. Use mvn clean install to install this project.
 ## 运行效果
 通过下面url访问不同的profile参数
-http://localhost:8888/licenseingservice/prod
+http://localhost:8888/licenseingservice/default
 ```json
-{"name":"licenseingservice","profiles":["prod"],"label":null,"version":null,"state":null,"propertySources":[{"name":"file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice-prod.yml","source":{"document":"tracer.property:\"I am the default\" spring.jpa.database:\"Mysql\""}},{"name":"file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice.yml","source":{"tracer.property":"I am the default","spring.jpa.database":"Mysql"}}]}
+{
+    "name": "licenseingservice",
+    "profiles": [
+        "default"
+    ],
+    "label": null,
+    "version": null,
+    "state": null,
+    "propertySources": [
+        {
+            "name": "file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice.properties",
+            "source": {
+                "spring.datasource.url": "jdbc:mysql://localhost:3306/default",
+                "spring.datasource.username": "root",
+                "spring.datasource.password": "3306",
+                "spring.datasource.driver-class-name": "com.mysql.cj.jdbc.Driver"
+            }
+        }
+    ]
+}
 ```
 
 http://localhost:8888/licenseingservice/dev
 ```json
-{"name":"licenseingservice","profiles":["dev"],"label":null,"version":null,"state":null,"propertySources":[{"name":"file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice-dev.yml","source":{"tracer.property":"I am the dev","spring.jpa.database":"Mysql"}},{"name":"file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice.yml","source":{"tracer.property":"I am the default","spring.jpa.database":"Mysql"}}]}
+{
+    "name": "licenseingservice",
+    "profiles": [
+        "dev"
+    ],
+    "label": null,
+    "version": null,
+    "state": null,
+    "propertySources": [
+        {
+            "name": "file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice-dev.yml",
+            "source": {
+                "tracer.property": "I am the dev",
+                "spring.jpa.database": "Mysql"
+            }
+        },
+        {
+            "name": "file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice.properties",
+            "source": {
+                "spring.datasource.url": "jdbc:mysql://localhost:3306/default",
+                "spring.datasource.username": "root",
+                "spring.datasource.password": "3306",
+                "spring.datasource.driver-class-name": "com.mysql.cj.jdbc.Driver"
+            }
+        }
+    ]
+}
 ```
 
-http://localhost:8888/licenseingservice/default
+http://localhost:8888/licenseingservice/prod
 ```json
-{"name":"licenseingservice","profiles":["default"],"label":null,"version":null,"state":null,"propertySources":[{"name":"file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice.yml","source":{"tracer.property":"I am the default","spring.jpa.database":"Mysql"}}]}
+{
+    "name": "licenseingservice",
+    "profiles": [
+        "prod"
+    ],
+    "label": null,
+    "version": null,
+    "state": null,
+    "propertySources": [
+        {
+            "name": "file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice-prod.yml",
+            "source": {
+                "tracer.property": "I am the default",
+                "spring.jpa.database": "Mysql"
+            }
+        },
+        {
+            "name": "file:///Users/zdm/eclipse-workspace/configuration-service/src/main/resources/licenseingservice/licenseingservice.properties",
+            "source": {
+                "spring.datasource.url": "jdbc:mysql://localhost:3306/default",
+                "spring.datasource.username": "root",
+                "spring.datasource.password": "3306",
+                "spring.datasource.driver-class-name": "com.mysql.cj.jdbc.Driver"
+            }
+        }
+    ]
+}
 ```
+
 

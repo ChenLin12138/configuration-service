@@ -1,2 +1,0 @@
-tracer.property: "I am the default"
-spring.jpa.database: "Mysql"
