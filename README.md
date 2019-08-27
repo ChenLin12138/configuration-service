@@ -1,5 +1,5 @@
 # licensing-service
-Spring Cloud Learning licensing-service
+Spring Cloud Learning configuration-service
 ## What Is It?
 Spring cloud components learning.
 ## Spring Cloud components
